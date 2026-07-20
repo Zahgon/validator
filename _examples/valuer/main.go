@@ -7,15 +7,11 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-// Nullable wraps a generic value.
 type Nullable[T any] struct {
 	Data T
 }
 
-// ValidatorValue returns the inner value that should be validated.
-func (n Nullable[T]) ValidatorValue() any {
-	return n.Data
-}
+func (n Nullable[T]) ValidatorValue() any { _ = "STUB: not implemented"; return *new(any) }
 
 type Config struct {
 	Name string `validate:"required"`
@@ -25,13 +21,11 @@ type Record struct {
 	Config Nullable[Config] `validate:"required"`
 }
 
-// use a single instance of Validate, it caches struct info
 var validate *validator.Validate
 
 func main() {
 	validate = validator.New()
 
-	// valid case: ValidatorValue unwraps Config and Name passes required.
 	valid := Record{
 		Config: Nullable[Config]{
 			Data: Config{Name: "validator"},
@@ -42,7 +36,6 @@ func main() {
 		fmt.Printf("Err(s):\n%+v\n", err)
 	}
 
-	// invalid case: Name is empty after unwrapping, so required fails on Config.Name.
 	invalid := Record{
 		Config: Nullable[Config]{},
 	}

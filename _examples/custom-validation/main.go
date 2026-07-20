@@ -6,12 +6,10 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-// MyStruct ..
 type MyStruct struct {
 	String string `validate:"is-awesome"`
 }
 
-// use a single instance of Validate, it caches struct info
 var validate *validator.Validate
 
 func main() {
@@ -33,7 +31,4 @@ func main() {
 	}
 }
 
-// ValidateMyVal implements validator.Func
-func ValidateMyVal(fl validator.FieldLevel) bool {
-	return fl.Field().String() == "awesome"
-}
+func ValidateMyVal(fl validator.FieldLevel) bool { _ = "STUB: not implemented"; return false }
