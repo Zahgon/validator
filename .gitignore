@@ -31,3 +31,7 @@ cover.html
 README.html
 .idea
 .claude/
+
+.aider*
+logs/
+vendor/
