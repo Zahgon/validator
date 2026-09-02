@@ -1,8 +1,5 @@
 package validator
 
-// Type: variant and their associated primary language prefixes from the
-// IANA Language Subtag Registry:
-// https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
 var iana_subtag_registry_variants = map[string][]string{
 	"1606nict": {"frm"},
 	"1694acad": {"fr"},
@@ -140,9 +137,6 @@ var iana_subtag_registry_variants = map[string][]string{
 	"xsistemo": {"eo"},
 }
 
-// Type: extlang and their associated primary language prefixes from the
-// IANA Language Subtag Registry:
-// https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
 var iana_subtag_registry_extlangs = map[string][]string{
 	"aao": {"ar"},
 	"abh": {"ar"},
