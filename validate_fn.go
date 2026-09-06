@@ -2,6 +2,4 @@
 
 package validator
 
-func isValidateFn(fl FieldLevel) bool {
-	panic("validateFn is not supported with 'no-validate-fn' tag")
-}
+func isValidateFn(fl FieldLevel) bool { _ = "STUB: not implemented"; return false }

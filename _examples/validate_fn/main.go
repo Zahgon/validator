@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 
 	"github.com/go-playground/validator/v10"
@@ -17,17 +16,11 @@ const (
 	Three
 )
 
-func (e *Enum) Validate() error {
-	if e == nil {
-		return errors.New("can't be nil")
-	}
-
-	return nil
-}
+func (e *Enum) Validate() error { _ = "STUB: not implemented"; return nil }
 
 type Struct struct {
-	Foo *Enum `validate:"validateFn"`         // uses Validate() error by default
-	Bar Enum  `validate:"validateFn=IsAEnum"` // uses IsAEnum() bool provided by enumer
+	Foo *Enum `validate:"validateFn"`
+	Bar Enum  `validate:"validateFn=IsAEnum"`
 }
 
 func main() {

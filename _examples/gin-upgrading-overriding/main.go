@@ -6,5 +6,4 @@ func main() {
 
 	binding.Validator = new(defaultValidator)
 
-	// regular gin logic
 }
